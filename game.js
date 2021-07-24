@@ -29,7 +29,6 @@ $(".btn").click(function()
 function checkAnswer(currentLevel){
   if(gamepattern[currentLevel]=== userClickedPattern[currentLevel]){
     if(userClickedPattern.length === gamepattern.length){
-      level++;
       setTimeout (function(){
         nextsequence();
       },1000);
@@ -52,6 +51,7 @@ function checkAnswer(currentLevel){
 
 function nextsequence(){
   userClickedPattern = [];
+  level++;
   $("#level-title").text("level "+ level);
   var randomnumber = Math.floor(Math.random()*4);
   var randomchosencolor = buttoncolors[randomnumber];
